@@ -1,0 +1,13 @@
+# Function to convert decimal to binary
+def decimal_to_binary(n):
+    binary = ""
+    if n == 0:
+        return "0"
+    while n > 0:
+        binary = str(n % 2) + binary
+        n = n // 2
+    return binary
+
+num = int(input("Enter a decimal number: "))
+binary_result = decimal_to_binary(num)
+print("Binary equivalent:", binary_result)
