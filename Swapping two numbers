@@ -1,0 +1,11 @@
+# Function to swap two numbers without using a third variable
+def swap_numbers(a, b):
+    print(f"Before swapping: a = {a}, b = {b}")
+    a = a + b
+    b = a - b
+    a = a - b
+    print(f"After swapping: a = {a}, b = {b}")
+
+a = int(input("Enter first number (a): "))
+b = int(input("Enter second number (b): "))
+swap_numbers(a, b)
