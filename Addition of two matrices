@@ -1,0 +1,37 @@
+# Function to add two matrices
+def read_matrix(rows, cols):
+    matrix = []
+    print(f"Enter elements row by row ({rows}x{cols}):")
+    for i in range(rows):
+        row = list(map(int, input(f"Row {i+1}: ").split()))
+        if len(row) != cols:
+            print("Invalid number of columns. Try again.")
+            return read_matrix(rows, cols)
+        matrix.append(row)
+    return matrix
+    
+def add_matrices(matrix1, matrix2):
+    result = []
+    for i in range(len(matrix1)):
+        row = []
+        for j in range(len(matrix1[0])):
+            row.append(matrix1[i][j] + matrix2[i][j])
+        result.append(row)
+    return result
+
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+print("\nMatrix A:")
+matrix1 = read_matrix(rows, cols)
+
+print("\nMatrix B:")
+matrix2 = read_matrix(rows, cols)
+
+# Add matrices
+sum_matrix = add_matrices(matrix1, matrix2)
+
+# Display result
+print("\nResultant Matrix after Addition:")
+for row in sum_matrix:
+    print(" ".join(map(str, row)))
