@@ -1,0 +1,10 @@
+# Function to check if s2 is a substring of s1
+def is_substring(s1, s2):
+    return s2 in s1
+s1 = input("Enter the main string (s1): ")
+s2 = input("Enter the substring to check (s2): ")
+
+if is_substring(s1, s2):
+    print("True - It is a substring.")
+else:
+    print("False - It is not a substring.")
