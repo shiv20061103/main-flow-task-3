@@ -1,0 +1,22 @@
+ #Function to find second largest number
+def second_largest(numbers):
+    if len(numbers) < 2:
+        return "List must contain at least two numbers."
+    
+    first = second = float('-inf')  # Initialize to smallest possible number
+
+    for num in numbers:
+        if num > first:
+            second = first
+            first = num
+        elif first > num > second:
+            second = num
+
+    if second == float('-inf'):
+        return "All elements are equal or only one unique number exists."
+    else:
+        return second
+
+nums = list(map(int, input("Enter numbers separated by space: ").split()))
+result = second_largest(nums)
+print("Second largest number is:", result)
